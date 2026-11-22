@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "متطوعي مصر الخير – الإسماعيلية",
+  "short_name": "متطوعي مصر الخير",
+  "description": "سجّل كمتطوع، واعرف الفعاليات الجاية وسجّل فيها، وشوف اللي عملناه سوا.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/?source=app",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbfaf6",
+  "theme_color": "#01775f",
+  "categories": ["social", "lifestyle"],
+  "icons": [
+    { "src": "/assets/icon-192.webp", "sizes": "192x192", "type": "image/webp", "purpose": "any" },
+    { "src": "/assets/icon-192.webp", "sizes": "192x192", "type": "image/webp", "purpose": "maskable" },
+    { "src": "/assets/mek-logo.jpg", "sizes": "320x320", "type": "image/jpeg", "purpose": "any" }
+  ]
+}
