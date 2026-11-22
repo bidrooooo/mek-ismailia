@@ -1,3 +1,4 @@
+
 name: Project Code Check
 
 on:
@@ -12,23 +13,31 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 24
 
       - name: Check JavaScript syntax
+        shell: bash
         run: |
           find . -type f -name "*.js" \
             -not -path "./.git/*" \
+            -not -path "./node_modules/*" \
             -print0 | while IFS= read -r -d '' file; do
-              echo "Checking: $file"
+              echo "Checking $file"
               node --check "$file" || exit 1
             done
 
       - name: Check JSON files
+        shell: bash
         run: |
-          node -e "JSON.parse(require('fs').readFileSync('vercel.json','utf8')); console.log('vercel.json OK')"
-          node -e "JSON.parse(require('fs').readFileSync('manifest.webmanifest','utf8')); console.log('manifest.webmanifest OK')"
+          find . -type f \( -name "*.json" -o -name "*.webmanifest" \) \
+            -not -path "./.git/*" \
+            -not -path "./node_modules/*" \
+            -print0 | while IFS= read -r -d '' file; do
+              echo "Checking $file"
+              node -e "JSON.parse(require('fs').readFileSync(process.argv[1], 'utf8'))" "$file" || exit 1
+            done
