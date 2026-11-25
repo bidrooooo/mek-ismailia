@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>بوابة متطوعي مصر الخير بالإسماعيلية</title>
+  <meta name="description" content="بوابة متطوعي مؤسسة مصر الخير بالإسماعيلية: سجّل كمتطوع، اعرف الفعاليات الجاية وسجّل فيها، وشوف اللي عملناه سوا.">
+  <meta name="theme-color" content="#01775f">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/mek-logo.svg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="assets/mek-logo.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="متطوعي مصر الخير">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://lh3.googleusercontent.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="الرئيسية">
+      <img src="assets/mek-logo.svg" alt="شعار مؤسسة مصر الخير" class="brand-logo">
+      <span class="brand-text">
+        <strong>متطوعي مصر الخير</strong>
+        <small>مكتب الإسماعيلية</small>
+      </span>
+    </a>
+    <a class="topbar-call" href="tel:+201205579332" aria-label="اتصل بنا">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+  </header>
+
+  <main id="main">
+    <!-- ===== الرئيسية: شاشة واحدة ===== -->
+    <section class="view view-home is-active" id="home" aria-label="الرئيسية">
+      <div class="hero">
+        <img class="hero-img" src="assets/images/hero.svg" alt="فريق متطوعي مصر الخير بالإسماعيلية" fetchpriority="high" decoding="async">
+        <div class="hero-text">
+          <p class="hero-kicker">تنمية الإنسان.. مهمتنا الأساسية</p>
+          <h1>إيدك معانا<br>تفرق في حياة ناس كتير</h1>
+          <p class="hero-stats" id="heroStats" hidden></p>
+        </div>
+      </div>
+
+      <nav class="tiles" aria-label="الأقسام">
+        <a class="tile tile-photo" href="#volunteer" style="--img:url('https://lh3.googleusercontent.com/d/1upAZYF4OrnJ5HlqbxYIaa97aZgyTByxW=w500-rw')">
+          <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M15 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2zm9 4c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"/></svg></span>
+          <span class="tile-title">أنا متطوع جديد</span>
+          <span class="tile-sub">سجّل وانضم للجروبات</span>
+        </a>
+        <a class="tile tile-photo" href="#events" style="--img:none">
+          <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14zM7 11h5v5H7z"/></svg></span>
+          <span class="tile-title">الفعاليات</span>
+          <span class="tile-sub" id="tileEventsSub">سجّل في الفعالية الجاية</span>
+          <span class="tile-badge" id="tileEventsBadge" hidden></span>
+        </a>
+        <a class="tile tile-plain tile-about" href="#about">
+          <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M12 3 2 8v2h20V8zM4 12v6H3v3h18v-3h-1v-6h-3v6h-2v-6h-2v6h-2v-6H9v6H7v-6z"/></svg></span>
+          <span class="tile-title">عن المؤسسة</span>
+          <span class="tile-sub">الموقع والصفحات الرسمية</span>
+        </a>
+        <a class="tile tile-plain tile-contact" href="#contact">
+          <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM7 9h10v2H7zm6 5H7v-2h6zm4-6H7V6h10z"/></svg></span>
+          <span class="tile-title">تواصل معنا</span>
+          <span class="tile-sub">تليفون، واتساب، العنوان</span>
+        </a>
+      </nav>
+    </section>
+
+    <!-- ===== متطوع جديد ===== -->
+    <section class="view" id="volunteer" aria-labelledby="volunteerTitle" hidden>
+      <div class="view-head">
+        <a class="back" href="#" aria-label="رجوع للرئيسية"><svg viewBox="0 0 24 24"><path d="m8.6 16.6 4.6-4.6-4.6-4.6L10 6l6 6-6 6z"/></svg> رجوع</a>
+        <h2 id="volunteerTitle">أهلًا بيك في فريقنا</h2>
+        <p class="view-lead">٣ خطوات وتبقى معانا في الفعالية الجاية.</p>
+      </div>
+
+      <div class="counter-card" id="volCounter" hidden>
+        <span class="counter-num" id="volCount">—</span>
+        <span class="counter-label">متطوع مسجّل معانا في الإسماعيلية</span>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">١</span>
+          <div class="step-body">
+            <h3>سجّل بياناتك</h3>
+            <p>استمارة واحدة بتاخد دقيقتين، وبعدها تبقى متطوع رسمي في مصر الخير.</p>
+            <a class="btn btn-primary" href="http://volunteer.frappe.cloud/mek_volunteer/new" target="_blank" rel="noopener">سجّل كمتطوع جديد</a>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">٢</span>
+          <div class="step-body">
+            <h3>ادخل الجروبات</h3>
+            <p>هنا بننزّل الفعاليات أول بأول، وصور اللي عملناه.</p>
+            <div class="link-cards">
+              <a class="link-card" href="https://www.facebook.com/groups/mekism.volunteers" target="_blank" rel="noopener">
+                <span class="lc-icon lc-fb"><svg viewBox="0 0 24 24"><path d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5C15 14.2 10.3 13 8 13zm8 0h-1a4.2 4.2 0 0 1 2 3.5V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z"/></svg></span>
+                <span><strong>متطوعي الإسماعيلية</strong><small>جروب فريقنا على فيسبوك</small></span>
+              </a>
+              <a class="link-card" href="https://www.facebook.com/groups/mekvolunteers" target="_blank" rel="noopener">
+                <span class="lc-icon lc-fb2"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4a14 14 0 0 1 1.9 4h-3.8A14 14 0 0 1 12 4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4zm.8 2h3a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16zm3-8h-3a8 8 0 0 1 4.4-3.6A15.7 15.7 0 0 0 8.1 8zM12 20a14 14 0 0 1-1.9-4h3.8A14 14 0 0 1 12 20zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.3 5.6a15.7 15.7 0 0 0 1.4-3.6h3a8 8 0 0 1-4.4 3.6zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4z"/></svg></span>
+                <span><strong>إدارة التطوع – مصر الخير</strong><small>جروب المتطوعين على مستوى الجمهورية</small></span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">٣</span>
+          <div class="step-body">
+            <h3>احجز مكانك في فعالية</h3>
+            <p>اختار الفعالية اللي تناسبك وسجّل فيها.</p>
+            <a class="btn btn-ghost" href="#events">شوف الفعاليات</a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== الفعاليات ===== -->
+    <section class="view" id="events" aria-labelledby="eventsTitle" hidden>
+      <div class="view-head">
+        <a class="back" href="#" aria-label="رجوع للرئيسية"><svg viewBox="0 0 24 24"><path d="m8.6 16.6 4.6-4.6-4.6-4.6L10 6l6 6-6 6z"/></svg> رجوع</a>
+        <h2 id="eventsTitle">الفعاليات</h2>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="أقسام الفعاليات">
+        <button role="tab" class="tab" data-tab="open" aria-selected="true">مفتوح التسجيل <span class="tab-count" data-count="open"></span></button>
+        <button role="tab" class="tab" data-tab="soon" aria-selected="false">قريبًا <span class="tab-count" data-count="soon"></span></button>
+        <button role="tab" class="tab" data-tab="done" aria-selected="false">تمت</button>
+        <button role="tab" class="tab" data-tab="calendar" aria-selected="false">جدول الشهر</button>
+        <button role="tab" class="tab" data-tab="impact" aria-selected="false">إنجازاتنا</button>
+      </div>
+
+      <div class="tab-panel" data-panel="open" role="tabpanel"><div class="cards" id="listOpen"></div></div>
+      <div class="tab-panel" data-panel="soon" role="tabpanel" hidden><div class="cards" id="listSoon"></div></div>
+      <div class="tab-panel" data-panel="done" role="tabpanel" hidden><div class="cards cards-done" id="listDone"></div></div>
+      <div class="tab-panel" data-panel="calendar" role="tabpanel" hidden>
+        <div class="cal-head">
+          <button class="cal-nav" id="calPrev" aria-label="الشهر اللي فات"><svg viewBox="0 0 24 24"><path d="m8.6 16.6 4.6-4.6-4.6-4.6L10 6l6 6-6 6z"/></svg></button>
+          <h3 id="calTitle">—</h3>
+          <button class="cal-nav" id="calNext" aria-label="الشهر الجاي"><svg viewBox="0 0 24 24"><path d="M15.4 16.6 10.8 12l4.6-4.6L14 6l-6 6 6 6z"/></svg></button>
+        </div>
+        <div class="cal-legend">
+          <span><i class="dot dot-open"></i> مفتوح التسجيل</span>
+          <span><i class="dot dot-soon"></i> قريبًا</span>
+          <span><i class="dot dot-done"></i> تمت</span>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+        <ul class="cal-list" id="calList"></ul>
+      </div>
+      <div class="tab-panel" data-panel="impact" role="tabpanel" hidden>
+        <div class="impact-top">
+          <div><span class="impact-num" id="impTotal">—</span><span class="impact-label">فعالية تمت</span></div>
+          <div><span class="impact-num" id="impPeople">—</span><span class="impact-label">مشاركة متطوعين</span></div>
+        </div>
+        <div class="impact-grid" id="impGrid"></div>
+        <p class="impact-note" id="impNote"></p>
+      </div>
+    </section>
+
+    <!-- ===== عن المؤسسة ===== -->
+    <section class="view" id="about" aria-labelledby="aboutTitle" hidden>
+      <div class="view-head">
+        <a class="back" href="#" aria-label="رجوع للرئيسية"><svg viewBox="0 0 24 24"><path d="m8.6 16.6 4.6-4.6-4.6-4.6L10 6l6 6-6 6z"/></svg> رجوع</a>
+        <h2 id="aboutTitle">مؤسسة مصر الخير</h2>
+        <p class="view-lead">مؤسسة تنموية غير هادفة للربح، شغلها كله على تنمية الإنسان. وفي الإسماعيلية، المتطوعين هما اللي بيوصّلوا الخير للدور والمستشفيات والأسر.</p>
+      </div>
+      <div class="about-logos"><img src="assets/mek-logo.svg" alt="شعار مصر الخير وبرنامج بصمة" loading="lazy" decoding="async"></div>
+      <div class="link-cards">
+        <a class="link-card" href="https://mekeg.org/" target="_blank" rel="noopener">
+          <span class="lc-icon lc-web"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4a14 14 0 0 1 1.9 4h-3.8A14 14 0 0 1 12 4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4zm.8 2h3a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16zm3-8h-3a8 8 0 0 1 4.4-3.6A15.7 15.7 0 0 0 8.1 8zM12 20a14 14 0 0 1-1.9-4h3.8A14 14 0 0 1 12 20zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.3 5.6a15.7 15.7 0 0 0 1.4-3.6h3a8 8 0 0 1-4.4 3.6zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4z"/></svg></span>
+          <span><strong>موقع مؤسسة مصر الخير</strong><small>mekeg.org</small></span>
+        </a>
+        <a class="link-card" href="https://www.facebook.com/groups/mekvolunteers" target="_blank" rel="noopener">
+          <span class="lc-icon lc-fb2"><svg viewBox="0 0 24 24"><path d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5C15 14.2 10.3 13 8 13zm8 0h-1a4.2 4.2 0 0 1 2 3.5V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z"/></svg></span>
+          <span><strong>إدارة التطوع – مصر الخير</strong><small>جروب المتطوعين على مستوى الجمهورية</small></span>
+        </a>
+        <a class="link-card" href="https://www.facebook.com/groups/mekism.volunteers" target="_blank" rel="noopener">
+          <span class="lc-icon lc-fb"><svg viewBox="0 0 24 24"><path d="M16 11a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5C15 14.2 10.3 13 8 13zm8 0h-1a4.2 4.2 0 0 1 2 3.5V19h6v-2.5c0-2.3-4.7-3.5-7-3.5z"/></svg></span>
+          <span><strong>متطوعي الإسماعيلية</strong><small>جروب فريقنا على فيسبوك</small></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== تواصل معنا ===== -->
+    <section class="view" id="contact" aria-labelledby="contactTitle" hidden>
+      <div class="view-head">
+        <a class="back" href="#" aria-label="رجوع للرئيسية"><svg viewBox="0 0 24 24"><path d="m8.6 16.6 4.6-4.6-4.6-4.6L10 6l6 6-6 6z"/></svg> رجوع</a>
+        <h2 id="contactTitle">تواصل معنا</h2>
+        <p class="view-lead">عندك سؤال عن التطوع أو فعالية؟ كلّمنا.</p>
+      </div>
+      <div class="link-cards">
+        <a class="link-card" href="tel:+201205579332">
+          <span class="lc-icon lc-phone"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>
+          <span><strong>اتصل بينا</strong><small dir="ltr">0120 557 9332</small></span>
+        </a>
+        <a class="link-card" href="https://wa.me/201205579332" target="_blank" rel="noopener">
+          <span class="lc-icon lc-wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3s-1 .2-3.3-.7a11.4 11.4 0 0 1-4.4-3.9 5 5 0 0 1-1-2.7 2.9 2.9 0 0 1 .9-2.2.9.9 0 0 1 .7-.3h.5c.2 0 .4 0 .6.5l.8 2a.6.6 0 0 1 0 .6l-.3.5-.4.4c-.1.2-.3.3-.1.6a8 8 0 0 0 1.5 1.8 7 7 0 0 0 2.1 1.3c.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3a2.3 2.3 0 0 1-.2 1.2z"/></svg></span>
+          <span><strong>واتساب</strong><small>ابعتلنا رسالة</small></span>
+        </a>
+        <a class="link-card" href="https://www.google.com/maps/search/?api=1&query=%D9%85%D9%8A%D8%AF%D8%A7%D9%86+%D8%B9%D8%B1%D8%A7%D8%A8%D9%8A+%D8%A7%D9%84%D8%A5%D8%B3%D9%85%D8%A7%D8%B9%D9%8A%D9%84%D9%8A%D8%A9+%D8%B9%D9%85%D8%A7%D8%B1%D8%A9+%D9%85%D8%B5%D8%B1+%D9%84%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86" target="_blank" rel="noopener">
+          <span class="lc-icon lc-map"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"/></svg></span>
+          <span><strong>مكتب الإسماعيلية</strong><small>ميدان عرابي، عمارة مصر للتأمين</small></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> مؤسسة مصر الخير – مكتب الإسماعيلية</span>
+    <a class="staff-link" href="https://forms.gle/Sihm4rLPiMyfUkHG6" target="_blank" rel="noopener">رابط فريق العمل</a>
+  </footer>
+
+  <!-- تفاصيل فعالية -->
+  <dialog class="sheet" id="eventSheet" aria-labelledby="sheetTitle">
+    <div class="sheet-inner" id="sheetBody"></div>
+  </dialog>
+
+  <script src="data/site-config.js"></script>
+  <script src="data/photos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

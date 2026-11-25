@@ -7,15 +7,15 @@
   <meta name="description" content="بوابة متطوعي مؤسسة مصر الخير بالإسماعيلية: شوف الفعاليات الجاية واشترك فيها، ولو أول مرة سجّل بياناتك وتعالى معانا.">
   <meta name="theme-color" content="#fbf7f1">
   <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="icon" href="/assets/mek-logo.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="/assets/mek-logo.jpg">
+  <link rel="icon" href="/assets/mek-logo.svg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/assets/mek-logo.svg">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="متطوعي مصر الخير">
   <meta property="og:type" content="website">
   <meta property="og:title" content="بوابة متطوعي مصر الخير بالإسماعيلية">
   <meta property="og:description" content="شوف الفعاليات الجاية واشترك فيها.">
-  <meta property="og:image" content="https://mek-ismailia.vercel.app/assets/images/hero.jpg">
+  <meta property="og:image" content="https://mek-ismailia.vercel.app/assets/images/hero.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://script.google.com">
@@ -25,7 +25,7 @@
 <body>
   <header class="ap-top">
     <a class="ap-brand" href="#" aria-label="الرئيسية">
-      <img src="/assets/mek-logo.jpg" alt="">
+      <img src="/assets/mek-logo.svg" alt="">
       <span><b>متطوعي مصر الخير</b><small>مكتب الإسماعيلية</small></span>
     </a>
     <div class="ap-end"></div>
@@ -36,6 +36,16 @@
     <section id="admin" class="view" hidden aria-label="لوحة الإدارة"></section>
   </main>
   <div class="dock"><nav aria-label="القايمة"></nav></div>
+  <script>
+    (function(){
+      document.addEventListener('error', function(ev){
+        var img=ev.target;
+        if(!img || img.tagName !== 'IMG' || img.dataset.fallbackApplied) return;
+        img.dataset.fallbackApplied='1';
+        img.src='/assets/default-image.svg';
+      }, true);
+    })();
+  </script>
   <script>
     window.BASMA_CONFIG = { members: { enabled: true, endpoint: 'https://script.google.com/macros/s/AKfycbwBlKVviiYyzjdHLlJhpzTbl2DsHEpVujv-PfBwRLx4pEjG5UuvQj7Lgqw4tpbumKxo/exec', contactPhone: '01205579332' } };
   </script>
